@@ -155,47 +155,15 @@ function Hero() {
 }
 
 function HeroVisual() {
-  const palette = [
-    { hex: "#E8F0F2", name: "#E8F0F2" },
-    { hex: "#C4D7E0", name: "#C4D7E0" },
-    { hex: "#6BA292", name: "#6BA292" },
-    { hex: "#3A6EA5", name: "#3A6EA5" },
-    { hex: "#2D3E50", name: "#2D3E50" },
-  ];
-
   return (
-    <div className="hero-visual hero-portrait-card" aria-label="Portrait of Hana Chanyalew and brand palette">
-      <div className="visual-orbit orbit-one" /><div className="visual-orbit orbit-two" />
-
-      <div className="portrait-panel">
-        <span className="portrait-badge">Business analytics</span>
-        <div className="portrait-frame">
-          <Image src="/hana-chanyalew.png" alt="Hana Chanyalew portrait" width={720} height={820} className="portrait-image" priority />
-        </div>
-        <div className="portrait-metric">
-          <span className="metric-label">Forecast quality</span>
-          <strong>94%</strong>
-        </div>
-      </div>
-
-      <div className="palette-panel">
-        <div className="palette-header">
-          <span className="eyebrow">BLUE COLOR PALETTE</span>
-          <span className="palette-mark">✦</span>
-        </div>
-        <h3 className="palette-title">MISTY FOREST</h3>
-        <div className="palette-grid">
-          {palette.map((swatch) => (
-            <div key={swatch.hex} className="swatch-card">
-              <div className="swatch-surface" style={{ background: swatch.hex }} />
-              <span className="swatch-code">{swatch.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="floating-insight"><span className="insight-icon"><LineChart size={15} /></span><span><small>Brand direction</small><strong>Calm, trustworthy, modern</strong></span><ArrowUpRight size={14} /></div>
-    </div>
+    <Image
+      src="/hana-chanyalew.jpg"
+      alt="Hana Chanyalew portrait"
+      width={640}
+      height={640}
+      className="hero-visual"
+      priority
+    />
   );
 }
 
@@ -356,7 +324,7 @@ function ContactSection() {
     <section className="contact-section" id="contact">
       <div className="contact-glow" />
       <div className="section-shell contact-layout">
-        <div className="contact-copy"><span className="eyebrow"><span className="availability-dot" /> OPEN TO OPPORTUNITIES</span><h2>Let’s make the<br />numbers <em>mean something.</em></h2><p>Have a business question worth exploring? I’d love to hear what you’re working on.</p><div className="contact-signoff">Hana Chanyalew <ArrowDownRight size={18} /></div></div>
+        <div className="contact-copy"><span className="eyebrow"><span className="availability-dot" /> OPEN TO OPPORTUNITIES</span><h2>Let’s make the<br />numbers mean<br /><em>something.</em></h2><p>Have a business question worth exploring? I’d love to hear what you’re working on.</p><div className="contact-signoff">Hana Chanyalew <ArrowDownRight size={18} /></div></div>
         <form className="contact-form" onSubmit={submit}>
           <div className="form-heading"><span className="eyebrow">START A CONVERSATION</span><span>Fields marked <b>*</b> are required</span></div>
           <div className="form-row"><label>Your name <b>*</b><input name="name" autoComplete="name" placeholder="Jane Smith" minLength={2} maxLength={100} required aria-invalid={Boolean(fieldErrors.name?.length)} aria-describedby={fieldErrors.name?.length ? "name-error" : undefined} />{fieldErrors.name?.map(error => <small className="field-error" id="name-error" key={error}>{error}</small>)}</label><label>Email address <b>*</b><input name="email" type="email" autoComplete="email" placeholder="jane@company.com" maxLength={254} required aria-invalid={Boolean(fieldErrors.email?.length)} aria-describedby={fieldErrors.email?.length ? "email-error" : undefined} />{fieldErrors.email?.map(error => <small className="field-error" id="email-error" key={error}>{error}</small>)}</label></div>
