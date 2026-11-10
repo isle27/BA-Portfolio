@@ -16,6 +16,7 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
+import Image from "next/image";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import type { Experience, PortfolioData, Project, Skill } from "@/lib/data";
 
@@ -163,21 +164,36 @@ function HeroVisual() {
   ];
 
   return (
-    <div className="hero-visual hero-palette" aria-label="Misty forest blue color palette">
+    <div className="hero-visual hero-portrait-card" aria-label="Portrait of Hana Chanyalew and brand palette">
       <div className="visual-orbit orbit-one" /><div className="visual-orbit orbit-two" />
-      <div className="palette-header">
-        <span className="eyebrow">BLUE COLOR PALETTE</span>
-        <span className="palette-mark">✦</span>
+
+      <div className="portrait-panel">
+        <span className="portrait-badge">Business analytics</span>
+        <div className="portrait-frame">
+          <Image src="/hana-chanyalew.png" alt="Hana Chanyalew portrait" width={720} height={820} className="portrait-image" priority />
+        </div>
+        <div className="portrait-metric">
+          <span className="metric-label">Forecast quality</span>
+          <strong>94%</strong>
+        </div>
       </div>
-      <h3 className="palette-title">MISTY FOREST</h3>
-      <div className="palette-grid">
-        {palette.map((swatch) => (
-          <div key={swatch.hex} className="swatch-card">
-            <div className="swatch-surface" style={{ background: swatch.hex }} />
-            <span className="swatch-code">{swatch.name}</span>
-          </div>
-        ))}
+
+      <div className="palette-panel">
+        <div className="palette-header">
+          <span className="eyebrow">BLUE COLOR PALETTE</span>
+          <span className="palette-mark">✦</span>
+        </div>
+        <h3 className="palette-title">MISTY FOREST</h3>
+        <div className="palette-grid">
+          {palette.map((swatch) => (
+            <div key={swatch.hex} className="swatch-card">
+              <div className="swatch-surface" style={{ background: swatch.hex }} />
+              <span className="swatch-code">{swatch.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
+
       <div className="floating-insight"><span className="insight-icon"><LineChart size={15} /></span><span><small>Brand direction</small><strong>Calm, trustworthy, modern</strong></span><ArrowUpRight size={14} /></div>
     </div>
   );
