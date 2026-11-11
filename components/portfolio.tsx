@@ -116,7 +116,7 @@ export function Portfolio({ data }: { data: PortfolioData }) {
             <ExperienceTimeline items={data.experience} />
             <div className="education-card">
               <span className="education-icon"><Sparkles size={16} /></span>
-              <div><span className="eyebrow">EDUCATION</span><h3>M.S. Information Technology <span>(in progress)</span></h3><p>Western Governors University</p></div>
+              <div><span className="eyebrow">EDUCATION</span><h3>M.S. Information Technology</h3><p>Western Governors University</p></div>
               <div className="education-divider" />
               <div><h3>B.S. Technical Management</h3><p>DeVry University · 2023</p></div>
             </div>
