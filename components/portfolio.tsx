@@ -36,7 +36,7 @@ export function Portfolio({ data }: { data: PortfolioData }) {
       <header className="site-header">
         <a className="brand" href="#home" aria-label="Hana Chanyalew home">
           <span className="brand-mark">HC<span>.</span></span>
-          <span className="brand-name">Hana Chanyalew<small>Business analytics</small></span>
+          <span className="brand-name">Hana Chanyalew | MSIT<small>Business analytics</small></span>
         </a>
         <button
           className="menu-toggle"
